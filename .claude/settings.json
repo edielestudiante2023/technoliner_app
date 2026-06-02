@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:qualityplastltda.com)",
+      "Bash(grep -n 'public $baseURL\\\\|indexPage' c:/xampp/htdocs/technoliner/app/Config/App.php)",
+      "Bash(\"c:/xampp/php/php.exe\" -l app/Controllers/Home.php)",
+      "Bash(\"c:/xampp/php/php.exe\" -l app/Controllers/BaseController.php)",
+      "Bash(\"c:/xampp/php/php.exe\" spark *)",
+      "Bash(curl -s -o \"c:/tmp/home_out.html\" -w \"HTTP %{http_code}\\\\n\" \"http://localhost:8085/\")",
+      "Bash(curl -s -o /dev/null -w \"css HTTP %{http_code}\\\\n\" \"http://localhost:8085/assets/css/style.css\")",
+      "Bash(curl -s -o /dev/null -w \"js HTTP %{http_code}\\\\n\" \"http://localhost:8085/assets/js/main.js\")",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"spark serve\")",
+      "Bash(curl -s \"http://localhost/technoliner/public/\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost/technoliner/public/assets/css/style.css\")",
+      "Bash(curl -s -o /dev/null -w \"css %{http_code}\\\\n\" \"http://localhost/technoliner/public/assets/css/style.css\")",
+      "Bash(curl -s -o /dev/null -w \"js  %{http_code}\\\\n\" \"http://localhost/technoliner/public/assets/js/main.js\")",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(ssh -V)",
+      "Bash(git symbolic-ref *)"
+    ]
+  }
+}
