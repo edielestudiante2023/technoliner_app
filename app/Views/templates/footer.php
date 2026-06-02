@@ -54,5 +54,14 @@
     <a href="https://wa.me/<?= esc($empresa['whatsapp_link']) ?>" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬</a>
 
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
+    <script>
+        // Registro del Service Worker (PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('<?= base_url('sw.js') ?>')
+                    .catch(function (err) { console.warn('SW no registrado:', err); });
+            });
+        }
+    </script>
 </body>
 </html>

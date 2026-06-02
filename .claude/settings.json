@@ -19,7 +19,20 @@
       "Bash(gh --version)",
       "Bash(gh auth *)",
       "Bash(ssh -V)",
-      "Bash(git symbolic-ref *)"
+      "Bash(git symbolic-ref *)",
+      "Bash(git -c user.name=\"edielestudiante2023\" -c user.email=\"edielestudiante2023@gmail.com\" commit -q -m \"Sitio web Technoliner SAS \\(landing CodeIgniter 4\\)\")",
+      "Bash(ssh -i C:/Users/elipt/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -o BatchMode=yes root@66.29.154.174 ' *)",
+      "Bash(ssh -i C:/Users/elipt/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new root@66.29.154.174 ' *)",
+      "Bash(ssh -i *)",
+      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" https://test.cycloidtalent.com/)",
+      "Bash(curl -s https://test.cycloidtalent.com/)",
+      "Bash(curl -s -o /dev/null -w \"css HTTP %{http_code} \\(%{content_type}\\)\\\\n\" https://test.cycloidtalent.com/assets/css/style.css)",
+      "Bash(\"c:/xampp/php/php.exe\" -r \"echo extension_loaded\\('gd'\\) ? 'GD OK' : 'GD FALTA';\")",
+      "Bash(\"c:/xampp/php/php.exe\" \"c:/tmp/gen_icons.php\")",
+      "Bash(echo \"=== manifest link en head ===\")",
+      "Bash(curl -s http://localhost/technoliner/public/)",
+      "Bash(curl -s -o /dev/null -w \"manifest HTTP %{http_code} \\(%{content_type}\\)\\\\n\" \"http://localhost/technoliner/public/manifest.webmanifest\")",
+      "Bash(git -c user.name=\"edielestudiante2023\" -c user.email=\"edielestudiante2023@gmail.com\" commit -q -m \"PWA: manifest, service worker, iconos e instalable+offline\")"
     ]
   }
 }
