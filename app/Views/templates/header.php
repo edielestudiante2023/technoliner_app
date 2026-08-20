@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Technoliner SAS — Soluciones de empaque seguras y sostenibles para tu industria.">
-    <title>Technoliner SAS — Protege lo esencial, preserva la calidad</title>
+    <meta name="description" content="<?= esc($descripcion ?? 'Technoliner SAS — Soluciones de empaque seguras y sostenibles para tu industria.') ?>">
+    <title><?= esc($titulo ?? 'Technoliner SAS — Protege lo esencial, preserva la calidad') ?></title>
 
     <!-- PWA -->
-    <meta name="theme-color" content="#0e8a6e">
+    <meta name="theme-color" content="#0773f5">
     <link rel="manifest" href="<?= base_url('manifest.webmanifest') ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/icons/favicon-32.png') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('assets/icons/apple-touch-icon.png') ?>">
@@ -24,19 +24,17 @@
     <header class="site-header" id="inicio">
         <div class="container header-inner">
             <a href="<?= base_url('/') ?>" class="brand">
-                <span class="brand-mark">T</span>
-                <span class="brand-text">
-                    <strong>Technoliner</strong>
-                    <small>Protege lo esencial, preserva la calidad</small>
-                </span>
+                <img src="<?= base_url('assets/img/logo.png') ?>" alt="Technoliner" class="brand-logo">
+                <small class="brand-tagline">Protege lo esencial, preserva la calidad</small>
             </a>
 
             <nav class="main-nav" id="mainNav">
-                <a href="#inicio">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#productos">Productos</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#contacto" class="btn btn-primary btn-nav">Contactar</a>
+                <a href="<?= base_url('/') ?>#inicio">Inicio</a>
+                <a href="<?= base_url('/') ?>#nosotros">Nosotros</a>
+                <a href="<?= site_url('productos') ?>">Productos</a>
+                <a href="<?= site_url('blog') ?>">Blog</a>
+                <a href="<?= base_url('/') ?>#contacto">Contacto</a>
+                <a href="<?= base_url('/') ?>#contacto" class="btn btn-primary btn-nav">Contactar</a>
             </nav>
 
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">

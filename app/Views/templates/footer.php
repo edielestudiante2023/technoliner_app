@@ -2,8 +2,7 @@
         <div class="container footer-grid">
             <div class="footer-col footer-brand">
                 <a href="<?= base_url('/') ?>" class="brand brand-footer">
-                    <span class="brand-mark">T</span>
-                    <span class="brand-text"><strong>Technoliner SAS</strong></span>
+                    <img src="<?= base_url('assets/img/logo-white.png') ?>" alt="Technoliner SAS" class="brand-logo">
                 </a>
                 <p>Soluciones de empaque seguras y sostenibles para las industrias alimentaria, farmacéutica, industrial y cosmética. Calidad que protege lo esencial.</p>
                 <div class="footer-social">
@@ -16,10 +15,11 @@
             <div class="footer-col">
                 <h4>Navegación</h4>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="<?= base_url('/') ?>#inicio">Inicio</a></li>
+                    <li><a href="<?= base_url('/') ?>#nosotros">Nosotros</a></li>
+                    <li><a href="<?= site_url('productos') ?>">Productos</a></li>
+                    <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                    <li><a href="<?= base_url('/') ?>#contacto">Contacto</a></li>
                 </ul>
             </div>
 
