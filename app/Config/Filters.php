@@ -12,6 +12,7 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\AdminAuthFilter;
 
 class Filters extends BaseFilters
 {
@@ -34,6 +35,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'adminauth'     => AdminAuthFilter::class,
     ];
 
     /**
@@ -72,13 +74,12 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            // Desactivado en pruebas automáticas para simplificar las peticiones POST simuladas.
+            ...(ENVIRONMENT === 'testing' ? [] : ['csrf']),
+            'invalidchars',
         ],
         'after' => [
-            // 'honeypot',
-            // 'secureheaders',
+            'secureheaders',
         ],
     ];
 

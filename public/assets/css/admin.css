@@ -1,0 +1,205 @@
+/* ===== Technoliner — panel administrativo ===== */
+:root {
+    --primary: #0773f5;
+    --primary-dark: #06297f;
+    --primary-soft: #e7f0fe;
+    --accent: #06297f;
+    --dark: #06297f;
+    --text: #2b3445;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --bg-alt: #f3f7f6;
+    --border: #e4e9ee;
+    --danger: #c0392b;
+    --danger-soft: #fdecea;
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(22, 36, 58, .08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg-alt);
+    line-height: 1.6;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.auth-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px;
+}
+
+.auth-card h1 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.auth-card p.subtitle {
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+.field { margin-bottom: 16px; }
+
+.field label {
+    display: block;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: .95rem;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.btn:hover { background: var(--primary-dark); }
+
+.btn-secondary {
+    background: var(--bg-alt);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-danger { background: var(--danger); }
+
+.btn-block { width: 100%; text-align: center; }
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: .88rem;
+    margin-bottom: 16px;
+}
+
+.alert-error { background: var(--danger-soft); color: var(--danger); }
+.alert-success { background: var(--primary-soft); color: var(--primary-dark); }
+
+.field-error { color: var(--danger); font-size: .8rem; margin-top: 4px; }
+
+.auth-links {
+    margin-top: 18px;
+    font-size: .85rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Panel con sidebar */
+.admin-shell { display: flex; min-height: 100vh; }
+
+.admin-sidebar {
+    width: 230px;
+    background: var(--dark);
+    color: #fff;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.admin-sidebar .brand {
+    padding: 0 20px 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin-bottom: 10px;
+}
+
+.admin-sidebar nav a {
+    display: block;
+    padding: 10px 20px;
+    color: rgba(255,255,255,.8);
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-main { flex: 1; min-width: 0; }
+
+.admin-topbar {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-content { padding: 24px; }
+
+.card {
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+table.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+table.admin-table th,
+table.admin-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+table.admin-table th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; }
+
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+.badge-success { background: var(--primary-soft); color: var(--primary-dark); }
+.badge-muted { background: #eee; color: var(--muted); }
+
+form.inline { display: inline; }

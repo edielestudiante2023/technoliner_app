@@ -2,24 +2,21 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductoModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        $data = [
-            'empresa' => [
-                'nombre'    => 'Technoliner SAS',
-                'eslogan'   => 'Protege lo esencial, preserva la calidad.',
-                'descripcion' => 'Soluciones de empaque seguras y sostenibles para tu industria.',
-                'nit'       => '901.404.716-8',
-                'direccion' => 'Cl. 28 Sur # 51 A - 79, Barrio Alcalá, Bogotá D.C.',
-                'telefono'  => '+57 312 430 4623',
-                'whatsapp'  => '+57 312 430 4623',
-                'whatsapp_link' => '573124304623',
-                'correo'    => 'gerencia.technoliner@gmail.com',
-            ],
-        ];
+        $productos = (new ProductoModel())
+            ->publicosQuery()
+            ->orderBy('productos.destacado', 'DESC')
+            ->orderBy('productos.orden', 'ASC')
+            ->findAll(6);
 
-        return view('home/index', $data);
+        return view('home/index', [
+            'empresa'   => $this->datosEmpresa(),
+            'productos' => $productos,
+        ]);
     }
 }

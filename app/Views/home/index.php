@@ -80,32 +80,31 @@
             <h2>Productos destacados</h2>
             <p class="section-sub">Conoce algunas de nuestras soluciones de empaque y cierre.</p>
         </div>
-        <div class="products-grid">
-            <article class="product-card">
-                <div class="product-img product-img-1">🟦</div>
-                <div class="product-body">
-                    <h3>Tapa plana o lisa</h3>
-                    <p>La tapa sencilla de 38 mm, también conocida como tapa lisa o plana, es una solución de cierre versátil y fiable, fabricada con polipropileno de alta densidad.</p>
-                    <a href="#contacto" class="link-arrow">Ver detalles →</a>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img product-img-2">🟩</div>
-                <div class="product-body">
-                    <h3>Pote crema + tapa</h3>
-                    <p>El pote crema con tapa es la elección ideal para almacenar y mantener la frescura de tus cremas y productos cosméticos.</p>
-                    <a href="#contacto" class="link-arrow">Ver detalles →</a>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img product-img-3">🟧</div>
-                <div class="product-body">
-                    <h3>Tapa push down 38 mm</h3>
-                    <p>La tapa push down de 38 mm es una solución de cierre eficiente y segura, ideal para una variedad de aplicaciones.</p>
-                    <a href="#contacto" class="link-arrow">Ver detalles →</a>
-                </div>
-            </article>
-        </div>
+        <?php if (empty($productos)): ?>
+            <p style="text-align:center;color:var(--muted);">Estamos preparando nuestro catálogo. Vuelve pronto.</p>
+        <?php else: ?>
+            <div class="products-grid">
+                <?php foreach ($productos as $producto): ?>
+                    <article class="product-card">
+                        <?php if (! empty($producto['imagen_principal_ruta'])): ?>
+                            <img class="product-img" src="<?= base_url('uploads/productos/' . $producto['imagen_principal_ruta']) ?>" alt="<?= esc($producto['imagen_principal_alt'] ?? $producto['nombre']) ?>" style="width:100%;height:180px;object-fit:cover;">
+                        <?php else: ?>
+                            <div class="product-img product-img-1">📦</div>
+                        <?php endif; ?>
+                        <div class="product-body">
+                            <h3><?= esc($producto['nombre']) ?></h3>
+                            <?php if (! empty($producto['resumen'])): ?>
+                                <p><?= esc($producto['resumen']) ?></p>
+                            <?php endif; ?>
+                            <a href="<?= site_url('productos/' . $producto['slug']) ?>" class="link-arrow">Ver detalles →</a>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+            <p style="text-align:center;margin-top:2rem;">
+                <a href="<?= site_url('productos') ?>" class="btn btn-outline">Ver catálogo completo</a>
+            </p>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -157,25 +156,43 @@
             </ul>
         </div>
 
-        <form class="contact-form" action="#" method="post" onsubmit="return false;">
+        <form class="contact-form" action="<?= site_url('contacto') ?>" method="post">
+            <?= csrf_field() ?>
+            <input type="hidden" name="form_rendered_at" value="<?= time() ?>">
+            <input type="hidden" name="origen_url" value="<?= current_url() ?>">
+
+            <?php if (session()->getFlashdata('contacto_mensaje')): ?>
+                <div class="alert alert-success" style="padding:12px 16px;border-radius:8px;background:#e6f5f0;color:#0a6b55;margin-bottom:16px;">
+                    <?= esc(session()->getFlashdata('contacto_mensaje')) ?>
+                </div>
+            <?php endif; ?>
+            <?php if (session()->getFlashdata('contacto_error')): ?>
+                <div class="alert alert-error" style="padding:12px 16px;border-radius:8px;background:#fdecea;color:#c0392b;margin-bottom:16px;">
+                    <?= esc(session()->getFlashdata('contacto_error')) ?>
+                </div>
+            <?php endif; ?>
+            <?php $erroresContacto = session()->getFlashdata('contacto_errors') ?? []; ?>
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required value="<?= esc(old('nombre')) ?>">
+                    <?php if (isset($erroresContacto['nombre'])): ?><small style="color:#c0392b;"><?= esc($erroresContacto['nombre']) ?></small><?php endif; ?>
                 </div>
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="correo" placeholder="correo@empresa.com" required>
+                    <input type="email" id="correo" name="correo" placeholder="correo@empresa.com" required value="<?= esc(old('correo')) ?>">
+                    <?php if (isset($erroresContacto['correo'])): ?><small style="color:#c0392b;"><?= esc($erroresContacto['correo']) ?></small><?php endif; ?>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label for="telefono">Número de teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+                    <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" value="<?= esc(old('telefono')) ?>">
                 </div>
                 <div class="form-group">
                     <label for="empresa">Nombre de la empresa</label>
-                    <input type="text" id="empresa" name="empresa" placeholder="Tu empresa">
+                    <input type="text" id="empresa" name="empresa" placeholder="Tu empresa" value="<?= esc(old('empresa')) ?>">
                 </div>
             </div>
             <div class="form-row">
@@ -203,14 +220,14 @@
             </div>
             <div class="form-group">
                 <label for="mensaje">Mensaje o consulta</label>
-                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte" required><?= esc(old('mensaje')) ?></textarea>
+                <?php if (isset($erroresContacto['mensaje'])): ?><small style="color:#c0392b;"><?= esc($erroresContacto['mensaje']) ?></small><?php endif; ?>
             </div>
             <label class="form-check">
                 <input type="checkbox" name="politica" required>
-                <span>Acepto la política de tratamiento de datos personales.</span>
+                <span>Acepto la <a href="<?= site_url('politica-tratamiento-datos') ?>" target="_blank" rel="noopener">política de tratamiento de datos personales</a>.</span>
             </label>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar mensaje</button>
-            <p class="form-note">* El envío del formulario se habilitará próximamente.</p>
         </form>
     </div>
 </section>

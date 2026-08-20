@@ -59,6 +59,10 @@ Vagrantfile
 
 /writable/uploads/*
 !/writable/uploads/index.html
+/public/uploads/blog/*
+!/public/uploads/blog/index.html
+/public/uploads/productos/*
+!/public/uploads/productos/index.html
 
 /writable/debugbar/*
 !/writable/debugbar/index.html
