@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="about-visual">
-                <div class="about-image">🏭</div>
+                <div class="about-image"><img src="<?= base_url('assets/img/about-empresa.jpg') ?>" alt="Materiales y componentes de empaque Technoliner"></div>
             </div>
         </div>
     </div>
