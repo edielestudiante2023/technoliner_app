@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-card hero-card-1">🛢️<span>Empaques</span></div>
-            <div class="hero-card hero-card-2">♻️<span>Sostenible</span></div>
-            <div class="hero-card hero-card-3">🔒<span>Seguro</span></div>
+            <div class="hero-card hero-card-1"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
+            <div class="hero-card hero-card-2"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
+            <div class="hero-card hero-card-3"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
         </div>
     </div>
 </section>
