@@ -223,6 +223,14 @@ img { max-width: 100%; display: block; }
 @media (max-width: 560px) {
     .benefits-grid, .products-grid, .testimonials-grid, .footer-grid, .form-row { grid-template-columns: 1fr; }
     .about-stats { gap: 1.4rem; }
+    .hero-visual {
+        height: auto; display: flex; gap: .7rem; justify-content: center; align-items: flex-start; margin-top: 1.5rem;
+    }
+    .hero-card, .hero-card-1, .hero-card-2, .hero-card-3 {
+        position: relative; width: 31%; min-width: 0; height: auto; aspect-ratio: 1;
+        top: auto; left: auto; right: auto; bottom: auto;
+    }
+    .hero-card span { font-size: .72rem; padding: .4rem .2rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
 
 /* ===== Blog ===== */
