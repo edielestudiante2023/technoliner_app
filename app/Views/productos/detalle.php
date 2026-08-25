@@ -6,7 +6,7 @@
             <div class="producto-galeria">
                 <?php if (! empty($imagenes)): ?>
                     <?php $principal = null; foreach ($imagenes as $img) { if ((int) $img['es_principal'] === 1) { $principal = $img; break; } } $principal = $principal ?? $imagenes[0]; ?>
-                    <img class="principal" id="imagen-principal" src="<?= base_url('uploads/productos/' . $principal['ruta']) ?>" alt="<?= esc($principal['alt_text'] ?? $producto['nombre']) ?>">
+                    <img class="principal" id="imagen-principal" src="<?= base_url('uploads/productos/' . $principal['ruta']) ?>" alt="<?= esc($principal['alt_text'] ?? $producto['nombre']) ?>" style="cursor:zoom-in;">
                     <?php if (count($imagenes) > 1): ?>
                         <div class="producto-galeria-miniaturas">
                             <?php foreach ($imagenes as $img): ?>
@@ -19,6 +19,11 @@
                 <?php else: ?>
                     <div class="producto-img-placeholder" style="height:340px;border-radius:var(--radius);">Sin imagen disponible</div>
                 <?php endif; ?>
+            </div>
+
+            <div class="lightbox" id="lightbox">
+                <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+                <img src="" alt="" id="lightboxImg">
             </div>
 
             <div class="producto-info">

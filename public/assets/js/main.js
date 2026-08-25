@@ -58,4 +58,31 @@
             iniciar();
         }
     }
+
+    // Lightbox de la imagen del producto
+    var imagenPrincipal = document.getElementById('imagen-principal');
+    var lightbox = document.getElementById('lightbox');
+    if (imagenPrincipal && lightbox) {
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxClose = document.getElementById('lightboxClose');
+
+        function abrirLightbox() {
+            lightboxImg.src = imagenPrincipal.src;
+            lightboxImg.alt = imagenPrincipal.alt;
+            lightbox.classList.add('open');
+        }
+
+        function cerrarLightbox() {
+            lightbox.classList.remove('open');
+        }
+
+        imagenPrincipal.addEventListener('click', abrirLightbox);
+        lightboxClose.addEventListener('click', cerrarLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) cerrarLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') cerrarLightbox();
+        });
+    }
 })();
