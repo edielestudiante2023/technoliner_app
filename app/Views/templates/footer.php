@@ -20,6 +20,7 @@
                     <li><a href="<?= site_url('productos') ?>">Productos</a></li>
                     <li><a href="<?= site_url('blog') ?>">Blog</a></li>
                     <li><a href="<?= base_url('/') ?>#contacto">Contacto</a></li>
+                    <li><a href="<?= site_url('admin/login') ?>">Administración</a></li>
                 </ul>
             </div>
 
