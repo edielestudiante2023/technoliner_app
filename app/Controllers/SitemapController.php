@@ -12,10 +12,14 @@ class SitemapController extends BaseController
         $articulos = (new ArticuloBlogModel())->publicados()->findAll();
         $productos = (new ProductoModel())->publicosQuery()->findAll();
 
+        $blogLastmod      = $this->ultimaModificacion($articulos, '2026-08-13');
+        $productosLastmod = $this->ultimaModificacion($productos, '2026-08-20');
+        $inicioLastmod    = $this->ultimaModificacion(array_merge($articulos, $productos), '2026-08-25');
+
         $urls = [
-            ['loc' => site_url('/'), 'lastmod' => date('Y-m-d')],
-            ['loc' => site_url('blog'), 'lastmod' => date('Y-m-d')],
-            ['loc' => site_url('productos'), 'lastmod' => date('Y-m-d')],
+            ['loc' => site_url('/'), 'lastmod' => $inicioLastmod],
+            ['loc' => site_url('blog'), 'lastmod' => $blogLastmod],
+            ['loc' => site_url('productos'), 'lastmod' => $productosLastmod],
             ['loc' => site_url('politica-tratamiento-datos'), 'lastmod' => '2026-08-13'],
         ];
 
@@ -36,5 +40,27 @@ class SitemapController extends BaseController
         return $this->response
             ->setContentType('application/xml')
             ->setBody(view('sitemap', ['urls' => $urls]));
+    }
+
+    /**
+     * @param list<array<string, mixed>> $registros
+     */
+    private function ultimaModificacion(array $registros, string $fallback): string
+    {
+        $ultima = strtotime($fallback);
+
+        foreach ($registros as $registro) {
+            if (empty($registro['updated_at'])) {
+                continue;
+            }
+
+            $timestamp = strtotime((string) $registro['updated_at']);
+
+            if ($timestamp !== false) {
+                $ultima = max($ultima, $timestamp);
+            }
+        }
+
+        return date('Y-m-d', $ultima);
     }
 }

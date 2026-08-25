@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= esc($descripcion ?? 'Technoliner SAS — Soluciones de empaque seguras y sostenibles para tu industria.') ?>">
+    <meta name="robots" content="<?= esc($robots ?? 'index, follow') ?>">
+    <?php if (! empty($canonical)): ?>
+        <link rel="canonical" href="<?= esc($canonical) ?>">
+    <?php endif; ?>
     <title><?= esc($titulo ?? 'Technoliner SAS — Protege lo esencial, preserva la calidad') ?></title>
 
     <!-- PWA -->

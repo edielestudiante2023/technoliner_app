@@ -10,6 +10,8 @@ class PoliticaController extends BaseController
             'empresa'     => $this->datosEmpresa(),
             'titulo'      => 'Política de Tratamiento de Datos Personales — Technoliner SAS',
             'descripcion' => 'Política de tratamiento de datos personales de Technoliner SAS, versión 1.0.',
+            'canonical'   => site_url('politica-tratamiento-datos'),
+            'robots'      => 'index, follow',
         ]);
     }
 }

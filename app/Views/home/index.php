@@ -5,7 +5,7 @@
     <div class="container hero-inner">
         <div class="hero-text">
             <span class="badge">+15 años de experiencia</span>
-            <h1>Technoliner SAS</h1>
+            <h1>Liners y soluciones de sellado para envases</h1>
             <p class="hero-tagline"><?= esc($empresa['eslogan']) ?></p>
             <p class="hero-desc"><?= esc($empresa['descripcion']) ?></p>
             <div class="hero-actions">

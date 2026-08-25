@@ -15,8 +15,12 @@ class Home extends BaseController
             ->findAll(6);
 
         return view('home/index', [
-            'empresa'   => $this->datosEmpresa(),
-            'productos' => $productos,
+            'empresa'     => $this->datosEmpresa(),
+            'productos'   => $productos,
+            'titulo'      => 'Liners para sellado de envases en Colombia | Technoliner',
+            'descripcion' => 'Liners sensitivos, espumados y de inducción para envases PE, PP, PET, PVC y vidrio, con asesoría técnica y entregas confiables.',
+            'canonical'   => site_url('/'),
+            'robots'      => 'index, follow',
         ]);
     }
 }

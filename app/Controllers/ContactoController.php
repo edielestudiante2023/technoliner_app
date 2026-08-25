@@ -112,11 +112,8 @@ class ContactoController extends BaseController
         return (bool) preg_match('/[\p{Cyrillic}\p{Han}\p{Arabic}\p{Hebrew}\p{Thai}\p{Greek}]/u', $texto);
     }
 
-    private function fechaColombia(string $fechaUtc): string
+    private function fechaColombia(string $fechaLocal): string
     {
-        $fecha = new \DateTime($fechaUtc, new \DateTimeZone('UTC'));
-        $fecha->setTimezone(new \DateTimeZone('America/Bogota'));
-
-        return $fecha->format('d/m/Y H:i') . ' (hora Colombia)';
+        return (new \DateTime($fechaLocal))->format('d/m/Y H:i') . ' (hora Colombia)';
     }
 }

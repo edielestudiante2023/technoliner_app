@@ -13,6 +13,7 @@ use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\AdminAuthFilter;
+use App\Filters\NoIndexFilter;
 
 class Filters extends BaseFilters
 {
@@ -36,6 +37,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'adminauth'     => AdminAuthFilter::class,
+        'noindex'       => NoIndexFilter::class,
     ];
 
     /**
@@ -107,5 +109,9 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'noindex' => [
+            'after' => ['admin', 'admin/*'],
+        ],
+    ];
 }

@@ -3,7 +3,7 @@
 <section class="section blog-hero">
     <div class="container">
         <div class="section-head">
-            <h2>Catálogo de productos</h2>
+            <h1>Catálogo de liners y sellos para envases</h1>
             <p class="section-sub">Liners y sellos para empaques industriales.</p>
         </div>
 

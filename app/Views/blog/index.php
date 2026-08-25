@@ -3,7 +3,7 @@
 <section class="section blog-hero">
     <div class="container">
         <div class="section-head">
-            <h2>Blog Technoliner</h2>
+            <h1>Guías técnicas de liners y sellado de envases</h1>
             <p class="section-sub">Guías de sellado, materiales, seguridad e inocuidad para tu empaque.</p>
         </div>
 
