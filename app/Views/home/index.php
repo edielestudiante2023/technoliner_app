@@ -13,10 +13,15 @@
                 <a href="#contacto" class="btn btn-outline btn-lg">Contáctanos</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-card hero-card-1"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
-            <div class="hero-card hero-card-2"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
-            <div class="hero-card hero-card-3"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="hero-carousel-slide active"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
+            <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
+            <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
+            <div class="hero-carousel-dots">
+                <button type="button" class="hero-carousel-dot active" aria-label="Ver Empaques"></button>
+                <button type="button" class="hero-carousel-dot" aria-label="Ver Seguro"></button>
+                <button type="button" class="hero-carousel-dot" aria-label="Ver Sostenible"></button>
+            </div>
         </div>
     </div>
 </section>

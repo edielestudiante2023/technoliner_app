@@ -123,6 +123,40 @@ a:hover { text-decoration: underline; }
     color: var(--muted);
 }
 
+/* ===== Instalación PWA (login) ===== */
+.pwa-install-section {
+    margin-top: 22px;
+    padding: 16px;
+    background: var(--primary-soft);
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius);
+    display: none;
+}
+.pwa-install-section.visible { display: flex; align-items: center; gap: 14px; }
+.pwa-install-icon { width: 56px; height: 56px; border-radius: 12px; box-shadow: var(--shadow); flex-shrink: 0; }
+.pwa-install-info { flex: 1; min-width: 0; }
+.pwa-install-info h5 { margin: 0 0 4px; font-size: .95rem; font-weight: 700; color: var(--dark); }
+.pwa-install-info p { margin: 0 0 8px; font-size: .78rem; color: var(--muted); line-height: 1.3; }
+.btn-pwa-install {
+    background: var(--primary); border: none; border-radius: 8px; color: #fff;
+    font-weight: 600; font-size: .85rem; padding: 7px 14px; cursor: pointer;
+}
+.btn-pwa-install:hover { background: var(--primary-dark); }
+
+.pwa-ios-modal {
+    display: none; position: fixed; inset: 0; background: rgba(6, 41, 127, .55);
+    z-index: 2000; align-items: center; justify-content: center; padding: 20px;
+}
+.pwa-ios-modal.visible { display: flex; }
+.pwa-ios-modal-content { background: #fff; border-radius: var(--radius); max-width: 360px; width: 100%; padding: 24px; }
+.pwa-ios-modal-content h4 { color: var(--dark); margin-bottom: 10px; }
+.pwa-ios-modal-content ol { padding-left: 20px; line-height: 1.6; font-size: .9rem; color: var(--text); }
+.pwa-ios-modal-content .btn-close-ios {
+    margin-top: 14px; width: 100%; background: var(--primary); color: #fff;
+    border: none; border-radius: 8px; padding: 10px; font-weight: 600; cursor: pointer;
+}
+.pwa-ios-modal-content .btn-close-ios:hover { background: var(--primary-dark); }
+
 /* Panel con sidebar */
 .admin-shell { display: flex; min-height: 100vh; }
 
