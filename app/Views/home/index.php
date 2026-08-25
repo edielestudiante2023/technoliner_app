@@ -135,6 +135,11 @@
                 <h3>Experiencia en el sector</h3>
                 <p>Conocimiento acumulado que nos permite entender mejor los retos de nuestros clientes.</p>
             </article>
+            <article class="benefit-card">
+                <div class="benefit-icon">🔍</div>
+                <h3>Trazabilidad y control</h3>
+                <p>Trabajamos bajo procesos definidos que garantizan la trazabilidad y consistencia de cada lote entregado.</p>
+            </article>
         </div>
     </div>
 </section>
