@@ -55,13 +55,6 @@
     </form>
 </div>
 
-<script>
-    var quill = new Quill('#editor', { theme: 'snow' });
-    document.getElementById('form-producto').addEventListener('submit', function () {
-        document.getElementById('descripcion_html').value = quill.root.innerHTML;
-    });
-</script>
-
 <?php if ($modo === 'editar'): ?>
 <div class="card" style="max-width:760px;">
     <h2>Especificaciones</h2>

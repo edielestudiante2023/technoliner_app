@@ -304,7 +304,8 @@ class ProductosController extends BaseAdminController
             return '<link rel="stylesheet" href="' . base_url('assets/vendor/quill/quill.snow.css') . '">';
         }
 
-        return '<script src="' . base_url('assets/vendor/quill/quill.min.js') . '"></script>';
+        return '<script src="' . base_url('assets/vendor/quill/quill.min.js') . '"></script>'
+            . '<script src="' . base_url('assets/js/admin-productos.js') . '"></script>';
     }
 
     private function reglasProducto(): array

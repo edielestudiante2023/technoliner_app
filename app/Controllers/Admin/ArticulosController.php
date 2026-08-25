@@ -182,7 +182,8 @@ class ArticulosController extends BaseAdminController
             return '<link rel="stylesheet" href="' . base_url('assets/vendor/quill/quill.snow.css') . '">';
         }
 
-        return '<script src="' . base_url('assets/vendor/quill/quill.min.js') . '"></script>';
+        return '<script src="' . base_url('assets/vendor/quill/quill.min.js') . '"></script>'
+            . '<script src="' . base_url('assets/js/admin-articulos.js') . '"></script>';
     }
 
     private function reglasArticulo(): array
