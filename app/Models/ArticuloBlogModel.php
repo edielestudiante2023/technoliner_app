@@ -27,6 +27,7 @@ class ArticuloBlogModel extends Model
         'seo_titulo',
         'seo_descripcion',
         'publicado_at',
+        'vistas',
     ];
 
     protected $validationRules = [
@@ -45,5 +46,10 @@ class ArticuloBlogModel extends Model
     public function encontrarPublicadoPorSlug(string $slug): ?array
     {
         return $this->publicados()->where('slug', $slug)->first();
+    }
+
+    public function registrarVista(int $id): void
+    {
+        $this->builder()->set('vistas', 'vistas + 1', false)->where('id', $id)->update();
     }
 }

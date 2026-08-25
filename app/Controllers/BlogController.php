@@ -52,6 +52,8 @@ class BlogController extends BaseController
             throw PageNotFoundException::forPageNotFound();
         }
 
+        $model->registrarVista($articulo['id']);
+
         return view('blog/detalle', [
             'empresa'     => $this->datosEmpresa(),
             'articulo'    => $articulo,

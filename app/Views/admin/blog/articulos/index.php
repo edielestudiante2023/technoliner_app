@@ -11,6 +11,7 @@
                 <th>Categoría</th>
                 <th>Estado</th>
                 <th>Publicado</th>
+                <th>Vistas</th>
                 <th></th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
                     <?php endif; ?>
                 </td>
                 <td><?= $a['publicado_at'] ? esc($a['publicado_at']) : '—' ?></td>
+                <td><?= (int) $a['vistas'] ?></td>
                 <td style="white-space:nowrap;">
                     <a href="<?= site_url('admin/blog/articulos/' . $a['id'] . '/editar') ?>">Editar</a>
                     &nbsp;|&nbsp;
