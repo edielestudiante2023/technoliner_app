@@ -71,6 +71,7 @@ img { max-width: 100%; display: block; }
 .hero {
     background: radial-gradient(120% 120% at 80% 0%, var(--primary-soft) 0%, #fff 55%);
     padding: clamp(3rem, 7vw, 6rem) 0;
+    overflow: hidden;
 }
 .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
 .badge {
@@ -82,7 +83,26 @@ img { max-width: 100%; display: block; }
 .hero-desc { color: var(--muted); font-size: 1.08rem; max-width: 46ch; margin-bottom: 1.8rem; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-.hero-carousel { position: relative; height: 360px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+.hero-visual-wrap { position: relative; }
+.hero-blob {
+    position: absolute; z-index: 0; pointer-events: none;
+    border-radius: 44% 56% 61% 39% / 49% 44% 56% 51%;
+    background: linear-gradient(135deg, var(--primary-soft), rgba(7, 115, 245, .12));
+}
+.hero-blob-1 { width: 300px; height: 300px; top: -50px; left: -40px; opacity: .8; }
+.hero-blob-2 {
+    width: 240px; height: 240px; bottom: -46px; right: -30px; opacity: .7;
+    background: linear-gradient(135deg, rgba(6, 41, 127, .1), var(--primary-soft));
+    border-radius: 58% 42% 39% 61% / 45% 55% 45% 55%;
+}
+.hero-dots-bg {
+    position: absolute; z-index: 0; pointer-events: none;
+    top: 8%; right: -8%; width: 130px; height: 130px;
+    background-image: radial-gradient(var(--primary) 1.6px, transparent 1.6px);
+    background-size: 16px 16px;
+    opacity: .2;
+}
+.hero-carousel { position: relative; z-index: 1; height: 360px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
 .hero-carousel-slide {
     position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease;
     display: flex; align-items: flex-end; justify-content: center;
@@ -242,6 +262,9 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
     .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; }
     .hero-carousel { height: 280px; margin-top: 1rem; }
+    .hero-blob-1 { width: 220px; height: 220px; top: -30px; left: -20px; }
+    .hero-blob-2 { width: 180px; height: 180px; bottom: -30px; right: -15px; }
+    .hero-dots-bg { width: 100px; height: 100px; right: -4%; }
     .benefits-grid, .products-grid, .testimonials-grid, .footer-grid, .process-grid { grid-template-columns: 1fr 1fr; }
     .nav-toggle { display: flex; }
     .main-nav {
@@ -257,6 +280,9 @@ img { max-width: 100%; display: block; }
     .benefits-grid, .products-grid, .testimonials-grid, .footer-grid, .form-row, .process-grid { grid-template-columns: 1fr; }
     .about-stats { gap: 1.4rem; }
     .hero-carousel { height: 220px; margin-top: 1.5rem; }
+    .hero-blob-1 { width: 160px; height: 160px; top: -20px; left: -10px; }
+    .hero-blob-2 { width: 130px; height: 130px; bottom: -20px; right: -10px; }
+    .hero-dots-bg { display: none; }
 }
 
 /* ===== Blog ===== */

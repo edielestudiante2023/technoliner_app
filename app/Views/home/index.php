@@ -13,14 +13,19 @@
                 <a href="#contacto" class="btn btn-outline btn-lg">Contáctanos</a>
             </div>
         </div>
-        <div class="hero-carousel" id="heroCarousel">
-            <div class="hero-carousel-slide active"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
-            <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
-            <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
-            <div class="hero-carousel-dots">
-                <button type="button" class="hero-carousel-dot active" aria-label="Ver Empaques"></button>
-                <button type="button" class="hero-carousel-dot" aria-label="Ver Seguro"></button>
-                <button type="button" class="hero-carousel-dot" aria-label="Ver Sostenible"></button>
+        <div class="hero-visual-wrap">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2"></div>
+            <div class="hero-dots-bg"></div>
+            <div class="hero-carousel" id="heroCarousel">
+                <div class="hero-carousel-slide active"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
+                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
+                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
+                <div class="hero-carousel-dots">
+                    <button type="button" class="hero-carousel-dot active" aria-label="Ver Empaques"></button>
+                    <button type="button" class="hero-carousel-dot" aria-label="Ver Seguro"></button>
+                    <button type="button" class="hero-carousel-dot" aria-label="Ver Sostenible"></button>
+                </div>
             </div>
         </div>
     </div>
