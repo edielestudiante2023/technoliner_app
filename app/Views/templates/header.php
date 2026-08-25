@@ -37,6 +37,7 @@
                 <a href="<?= base_url('/') ?>#nosotros">Nosotros</a>
                 <a href="<?= site_url('productos') ?>">Productos</a>
                 <a href="<?= site_url('blog') ?>">Blog</a>
+                <a href="<?= site_url('clientes') ?>">Clientes</a>
                 <a href="<?= base_url('/') ?>#contacto">Contacto</a>
                 <a href="<?= base_url('/') ?>#contacto" class="btn btn-primary btn-nav">Contactar</a>
             </nav>

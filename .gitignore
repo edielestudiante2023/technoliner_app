@@ -63,6 +63,8 @@ Vagrantfile
 !/public/uploads/blog/index.html
 /public/uploads/productos/*
 !/public/uploads/productos/index.html
+/public/uploads/clientes/*
+!/public/uploads/clientes/index.html
 
 /writable/debugbar/*
 !/writable/debugbar/index.html

@@ -20,6 +20,7 @@
             <a href="<?= site_url('admin/blog/categorias') ?>">Categorías del blog</a>
             <a href="<?= site_url('admin/productos') ?>">Productos</a>
             <a href="<?= site_url('admin/productos/categorias') ?>">Categorías de productos</a>
+            <a href="<?= site_url('admin/clientes') ?>">Clientes</a>
         </nav>
     </aside>
     <div class="admin-main">

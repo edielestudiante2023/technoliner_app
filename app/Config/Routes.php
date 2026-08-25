@@ -8,6 +8,7 @@ $routes->get('blog', 'BlogController::index');
 $routes->get('blog/(:segment)', 'BlogController::ver/$1');
 $routes->get('productos', 'ProductoController::index');
 $routes->get('productos/(:segment)', 'ProductoController::ver/$1');
+$routes->get('clientes', 'ClienteController::index');
 $routes->get('politica-tratamiento-datos', 'PoliticaController::index');
 $routes->post('contacto', 'ContactoController::guardar', ['filter' => 'honeypot']);
 $routes->get('sitemap.xml', 'SitemapController::index');
@@ -66,4 +67,12 @@ $routes->group('admin', ['filter' => 'adminauth'], static function (RouteCollect
     $routes->post('productos/(:num)/imagenes', 'Admin\ProductosController::subirImagen/$1');
     $routes->post('productos/(:num)/imagenes/(:num)/principal', 'Admin\ProductosController::marcarImagenPrincipal/$1/$2');
     $routes->post('productos/(:num)/imagenes/(:num)/eliminar', 'Admin\ProductosController::eliminarImagen/$1/$2');
+
+    $routes->get('clientes', 'Admin\ClientesController::index');
+    $routes->get('clientes/nuevo', 'Admin\ClientesController::nuevo');
+    $routes->post('clientes', 'Admin\ClientesController::crear');
+    $routes->get('clientes/(:num)/editar', 'Admin\ClientesController::editar/$1');
+    $routes->post('clientes/(:num)', 'Admin\ClientesController::actualizar/$1');
+    $routes->post('clientes/(:num)/estado', 'Admin\ClientesController::cambiarEstado/$1');
+    $routes->post('clientes/(:num)/eliminar', 'Admin\ClientesController::eliminar/$1');
 });

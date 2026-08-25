@@ -19,6 +19,7 @@
                     <li><a href="<?= base_url('/') ?>#nosotros">Nosotros</a></li>
                     <li><a href="<?= site_url('productos') ?>">Productos</a></li>
                     <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                    <li><a href="<?= site_url('clientes') ?>">Clientes</a></li>
                     <li><a href="<?= base_url('/') ?>#contacto">Contacto</a></li>
                     <li><a href="<?= site_url('admin/login') ?>">Administración</a></li>
                 </ul>

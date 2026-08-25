@@ -35,7 +35,6 @@
                 <p>Nuestro propósito es contribuir a que los productos de nuestros clientes lleguen al consumidor de manera segura, confiable y con la calidad que esperan.</p>
                 <div class="about-stats">
                     <div class="stat"><strong>+15</strong><span>años de experiencia</span></div>
-                    <div class="stat"><strong>4</strong><span>industrias atendidas</span></div>
                     <div class="stat"><strong>100%</strong><span>compromiso con la calidad</span></div>
                 </div>
             </div>
@@ -46,8 +45,44 @@
     </div>
 </section>
 
+<!-- ===== PRODUCTOS ===== -->
+<section class="section section-alt" id="productos">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Productos</span>
+            <h2>Productos destacados</h2>
+            <p class="section-sub">Conoce algunas de nuestras soluciones de empaque y cierre.</p>
+        </div>
+        <?php if (empty($productos)): ?>
+            <p style="text-align:center;color:var(--muted);">Estamos preparando nuestro catálogo. Vuelve pronto.</p>
+        <?php else: ?>
+            <div class="products-grid">
+                <?php foreach ($productos as $producto): ?>
+                    <article class="product-card">
+                        <?php if (! empty($producto['imagen_principal_ruta'])): ?>
+                            <img class="product-img" src="<?= base_url('uploads/productos/' . $producto['imagen_principal_ruta']) ?>" alt="<?= esc($producto['imagen_principal_alt'] ?? $producto['nombre']) ?>" style="width:100%;height:180px;object-fit:cover;">
+                        <?php else: ?>
+                            <div class="product-img product-img-1">📦</div>
+                        <?php endif; ?>
+                        <div class="product-body">
+                            <h3><?= esc($producto['nombre']) ?></h3>
+                            <?php if (! empty($producto['resumen'])): ?>
+                                <p><?= esc($producto['resumen']) ?></p>
+                            <?php endif; ?>
+                            <a href="<?= site_url('productos/' . $producto['slug']) ?>" class="link-arrow">Ver detalles →</a>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+            <p style="text-align:center;margin-top:2rem;">
+                <a href="<?= site_url('productos') ?>" class="btn btn-outline">Ver catálogo completo</a>
+            </p>
+        <?php endif; ?>
+    </div>
+</section>
+
 <!-- ===== DIFERENCIALES ===== -->
-<section class="section section-alt">
+<section class="section">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Diferenciales</span>
@@ -95,7 +130,7 @@
 </section>
 
 <!-- ===== CALIDAD ===== -->
-<section class="section" id="calidad">
+<section class="section section-alt" id="calidad">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Calidad</span>
@@ -113,7 +148,7 @@
 </section>
 
 <!-- ===== PROCESOS ===== -->
-<section class="section section-alt">
+<section class="section">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Procesos</span>
@@ -142,42 +177,6 @@
                 <p>No limitamos la relación a la entrega: identificamos problemas, analizamos causas y buscamos soluciones junto a ti.</p>
             </article>
         </div>
-    </div>
-</section>
-
-<!-- ===== PRODUCTOS ===== -->
-<section class="section" id="productos">
-    <div class="container">
-        <div class="section-head">
-            <span class="eyebrow">Productos</span>
-            <h2>Productos destacados</h2>
-            <p class="section-sub">Conoce algunas de nuestras soluciones de empaque y cierre.</p>
-        </div>
-        <?php if (empty($productos)): ?>
-            <p style="text-align:center;color:var(--muted);">Estamos preparando nuestro catálogo. Vuelve pronto.</p>
-        <?php else: ?>
-            <div class="products-grid">
-                <?php foreach ($productos as $producto): ?>
-                    <article class="product-card">
-                        <?php if (! empty($producto['imagen_principal_ruta'])): ?>
-                            <img class="product-img" src="<?= base_url('uploads/productos/' . $producto['imagen_principal_ruta']) ?>" alt="<?= esc($producto['imagen_principal_alt'] ?? $producto['nombre']) ?>" style="width:100%;height:180px;object-fit:cover;">
-                        <?php else: ?>
-                            <div class="product-img product-img-1">📦</div>
-                        <?php endif; ?>
-                        <div class="product-body">
-                            <h3><?= esc($producto['nombre']) ?></h3>
-                            <?php if (! empty($producto['resumen'])): ?>
-                                <p><?= esc($producto['resumen']) ?></p>
-                            <?php endif; ?>
-                            <a href="<?= site_url('productos/' . $producto['slug']) ?>" class="link-arrow">Ver detalles →</a>
-                        </div>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-            <p style="text-align:center;margin-top:2rem;">
-                <a href="<?= site_url('productos') ?>" class="btn btn-outline">Ver catálogo completo</a>
-            </p>
-        <?php endif; ?>
     </div>
 </section>
 
