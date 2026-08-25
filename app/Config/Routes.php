@@ -24,6 +24,7 @@ $routes->group('admin', static function (RouteCollection $routes): void {
 
 $routes->group('admin', ['filter' => 'adminauth'], static function (RouteCollection $routes): void {
     $routes->get('/', 'Admin\DashboardController::index');
+    $routes->get('contactos', 'Admin\ContactosController::index');
     $routes->get('usuarios', 'Admin\UsuariosController::index');
     $routes->get('usuarios/nuevo', 'Admin\UsuariosController::nuevo');
     $routes->post('usuarios', 'Admin\UsuariosController::crear');

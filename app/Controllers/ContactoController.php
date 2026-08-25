@@ -25,6 +25,12 @@ class ContactoController extends BaseController
             return redirect()->to('/#contacto')->with('contacto_error', 'No se pudo procesar tu solicitud. Inténtalo de nuevo.');
         }
 
+        if ($this->contieneEscrituraNoLatina((string) $this->request->getPost('nombre') . ' ' . (string) $this->request->getPost('empresa') . ' ' . (string) $this->request->getPost('mensaje'))) {
+            log_message('warning', 'Contacto spam bloqueado (escritura no latina). IP: {ip}', ['ip' => $this->request->getIPAddress()]);
+
+            return redirect()->to('/#contacto')->with('contacto_mensaje', 'Gracias, recibimos tu solicitud. Te contactaremos pronto.');
+        }
+
         $rules = [
             'nombre'    => 'required|max_length[120]',
             'correo'    => 'required|valid_email|max_length[190]',
@@ -99,6 +105,11 @@ class ContactoController extends BaseController
             'id'    => $contactoId,
             'error' => $resultado['error'],
         ]);
+    }
+
+    private function contieneEscrituraNoLatina(string $texto): bool
+    {
+        return (bool) preg_match('/[\p{Cyrillic}\p{Han}\p{Arabic}\p{Hebrew}\p{Thai}\p{Greek}]/u', $texto);
     }
 
     private function fechaColombia(string $fechaUtc): string

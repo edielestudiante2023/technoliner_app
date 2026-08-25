@@ -13,6 +13,7 @@
         <div class="brand">Technoliner</div>
         <nav>
             <a href="<?= site_url('admin') ?>">Inicio</a>
+            <a href="<?= site_url('admin/contactos') ?>">Contactos</a>
             <a href="<?= site_url('admin/usuarios') ?>">Usuarios</a>
             <a href="<?= site_url('admin/blog/articulos') ?>">Artículos del blog</a>
             <a href="<?= site_url('admin/blog/categorias') ?>">Categorías del blog</a>
