@@ -1,5 +1,5 @@
 /* Service Worker — Technoliner SAS PWA */
-const CACHE = 'technoliner-v1';
+const CACHE = 'technoliner-v2';
 
 // Recursos base a precachear (rutas relativas al scope del SW).
 const PRECACHE = [
@@ -31,38 +31,23 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch:
-//  - Navegación (HTML): network-first con fallback a caché (offline).
-//  - Otros recursos: cache-first con actualización en segundo plano.
+// Fetch: network-first en todo (HTML y recursos), con fallback a caché
+// solo cuando no hay conexión. Así los cambios de contenido (fotos,
+// estilos) se ven siempre en la siguiente carga, sin depender de que
+// alguien suba el numero de version de este archivo.
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
 
-  if (req.mode === 'navigate') {
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
+  event.respondWith(
+    fetch(req)
+      .then((res) => {
+        if (res && res.status === 200 && res.type === 'basic') {
           const copy = res.clone();
           caches.open(CACHE).then((c) => c.put(req, copy));
-          return res;
-        })
-        .catch(() => caches.match(req).then((r) => r || caches.match('./')))
-    );
-    return;
-  }
-
-  event.respondWith(
-    caches.match(req).then((cached) => {
-      const network = fetch(req)
-        .then((res) => {
-          if (res && res.status === 200 && res.type === 'basic') {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
-          }
-          return res;
-        })
-        .catch(() => cached);
-      return cached || network;
-    })
+        }
+        return res;
+      })
+      .catch(() => caches.match(req).then((r) => r || (req.mode === 'navigate' ? caches.match('./') : undefined)))
   );
 });

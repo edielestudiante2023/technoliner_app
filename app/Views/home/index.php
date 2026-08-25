@@ -18,9 +18,9 @@
             <div class="hero-blob hero-blob-2"></div>
             <div class="hero-dots-bg"></div>
             <div class="hero-carousel" id="heroCarousel">
-                <div class="hero-carousel-slide active"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
-                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
-                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
+                <div class="hero-carousel-slide active"><img src="<?= base_url('assets/img/hero-empaques.jpg') ?>?v=<?= filemtime(FCPATH . 'assets/img/hero-empaques.jpg') ?>" alt="Empaques"><span>Empaques</span></div>
+                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-seguro.jpg') ?>?v=<?= filemtime(FCPATH . 'assets/img/hero-seguro.jpg') ?>" alt="Seguro"><span>Seguro</span></div>
+                <div class="hero-carousel-slide"><img src="<?= base_url('assets/img/hero-sostenible.jpg') ?>?v=<?= filemtime(FCPATH . 'assets/img/hero-sostenible.jpg') ?>" alt="Sostenible"><span>Sostenible</span></div>
                 <div class="hero-carousel-dots">
                     <button type="button" class="hero-carousel-dot active" aria-label="Ver Empaques"></button>
                     <button type="button" class="hero-carousel-dot" aria-label="Ver Seguro"></button>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="about-visual">
-                <div class="about-image"><img src="<?= base_url('assets/img/about-empresa.jpg') ?>" alt="Materiales y componentes de empaque Technoliner"></div>
+                <div class="about-image"><img src="<?= base_url('assets/img/about-empresa.jpg') ?>?v=<?= filemtime(FCPATH . 'assets/img/about-empresa.jpg') ?>" alt="Materiales y componentes de empaque Technoliner"></div>
             </div>
         </div>
     </div>
