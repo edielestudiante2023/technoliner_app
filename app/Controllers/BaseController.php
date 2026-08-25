@@ -59,7 +59,7 @@ abstract class BaseController extends Controller
             'telefono'      => '+57 302 125 5858',
             'whatsapp'      => '+57 302 125 5858',
             'whatsapp_link' => '573021255858',
-            'correo'        => 'gerencia@technoliner.co',
+            'correo'        => 'gerencia@technoliner.com.co',
         ];
     }
 }

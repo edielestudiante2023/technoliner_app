@@ -11,7 +11,7 @@
             <ul>
                 <li>Domicilio: Bogotá D.C., Colombia.</li>
                 <li>Dirección: Cl. 28 Sur # 51 A - 79, Barrio Alcalá, Bogotá D.C.</li>
-                <li>Correo para consultas y reclamos de protección de datos: gerencia@technoliner.co.</li>
+                <li>Correo para consultas y reclamos de protección de datos: gerencia@technoliner.com.co.</li>
                 <li>Teléfono: +57 312 430 4623.</li>
                 <li>Sitio web: https://technoliner.co.</li>
             </ul>
@@ -79,7 +79,7 @@
             </ol>
 
             <h2>9. Atención de consultas y reclamos</h2>
-            <p>Las solicitudes deberán enviarse a gerencia@technoliner.co con el asunto <strong>Protección de datos personales</strong> e incluir:</p>
+            <p>Las solicitudes deberán enviarse a gerencia@technoliner.com.co con el asunto <strong>Protección de datos personales</strong> e incluir:</p>
             <ul>
                 <li>nombre completo del titular;</li>
                 <li>documento o información suficiente para verificar su identidad;</li>
@@ -125,7 +125,7 @@
             <blockquote>Autorizo a Technoliner SAS para tratar mis datos personales con el fin de atender mi solicitud, contactarme y gestionar la relación comercial derivada de ella, de acuerdo con la Política de Tratamiento de Datos Personales, versión 1.0.</blockquote>
 
             <h2>Anexo B. Aviso breve de privacidad</h2>
-            <blockquote>Technoliner SAS, NIT 901.404.716-8, tratará los datos suministrados para recibir y responder su solicitud, contactarlo y prevenir usos abusivos del formulario. Puede conocer, actualizar, rectificar o solicitar la supresión de sus datos escribiendo a gerencia@technoliner.co. Consulte la política completa en https://technoliner.co/politica-tratamiento-datos.</blockquote>
+            <blockquote>Technoliner SAS, NIT 901.404.716-8, tratará los datos suministrados para recibir y responder su solicitud, contactarlo y prevenir usos abusivos del formulario. Puede conocer, actualizar, rectificar o solicitar la supresión de sus datos escribiendo a gerencia@technoliner.com.co. Consulte la política completa en https://technoliner.co/politica-tratamiento-datos.</blockquote>
         </div>
     </div>
 </section>
